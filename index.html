@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flying BIX - Coming Soon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #ff007f, #7928ca, #00dfd8, #ff4b2b);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass-card {
+      position: relative;
+      z-index: 10;
+      background: rgba(15, 15, 25, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 3.5rem 2.5rem;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+      max-width: 580px;
+      width: 88%;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    h1 {
+      font-size: 3.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(180deg, #ffffff, #ffe500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2.2rem;
+      line-height: 1.6;
+    }
+
+    .btn-youtube {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #ff0000;
+      color: #ffffff;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .btn-youtube:hover {
+      transform: scale(1.07);
+      background: #cc0000;
+      box-shadow: 0 15px 40px rgba(255, 0, 0, 0.7);
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      pointer-events: none;
+      animation: floatUp infinite linear;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(105vh) scale(0.3); opacity: 0; }
+      50% { opacity: 0.7; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glass-card">
+    <div class="badge">🚀 YouTube Channel Launch</div>
+    <h1>FLYING BIX</h1>
+    <p>Something epic is taking off! Get ready for high-energy content, builds, and cinematic drone adventures.</p>
+    <!-- Replace YOUR_YOUTUBE_URL below with your actual channel link -->
+    <a href="https://www.youtube.com/@flyingbix" target="_blank" class="btn-youtube">
+      ▶ Subscribe on YouTube
+    </a>
+  </div>
+
+  <script>
+    // Create dynamic background particle effect
+    for (let i = 0; i < 25; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      const size = Math.random() * 35 + 10;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.animationDuration = `${Math.random() * 6 + 6}s`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
+      document.body.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
